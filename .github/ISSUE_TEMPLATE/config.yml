@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Provider Issue
+    url: https://github.com/terraform-providers
+    about: Each provider has its own repository, and issues should be opened there not on the main Terraform repository.
+  - name: Question
+    url: https://www.terraform.io/community.html
+    about: Please ask and answer questions through the Terraform Community mediums.
+  - name: Security Vulnerability
+    url: https://www.hashicorp.com/security.html
+    about: Please report security vulnerabilities responsibly.
