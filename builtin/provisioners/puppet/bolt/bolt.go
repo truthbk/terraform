@@ -43,7 +43,12 @@ func Task(connInfo map[string]string, timeout time.Duration, sudo bool, task str
 	}
 
 	if connInfo["type"] == "winrm" {
-		cmdargs = append(cmdargs, "-p", "\""+connInfo["password"]+"\"", "--no-ssl")
+		cmdargs = append(cmdargs, "-p", "\""+connInfo["password"]+"\"")
+		if connInfo["https"] == "true" {
+			cmdargs = append(cmdargs, "--no-ssl-verify")
+		} else {
+			cmdargs = append(cmdargs, "--no-ssl")
+		}
 	} else {
 		if sudo {
 			cmdargs = append(cmdargs, "--run-as", "root")

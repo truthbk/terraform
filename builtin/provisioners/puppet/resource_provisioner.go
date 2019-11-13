@@ -271,6 +271,7 @@ func (p *provisioner) installPuppetAgentOpenSource() error {
 		"host":     p.instanceState.Ephemeral.ConnInfo["host"],
 		"user":     p.instanceState.Ephemeral.ConnInfo["user"],
 		"password": p.instanceState.Ephemeral.ConnInfo["password"], // Required on Windows only
+		"https":    p.instanceState.Ephemeral.ConnInfo["https"],    // Required on Windows only
 	}
 
 	result, err := bolt.Task(
